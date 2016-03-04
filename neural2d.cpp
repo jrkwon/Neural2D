@@ -5,6 +5,9 @@ David R. Miller, 2014
 For more info, see neural2d.h.
 */
 
+#include <QCoreApplication>
+#include <QDir>
+#include <QDebug>
 #include "neural2d.h"
 
 int main(int argc, char **argv)
@@ -13,9 +16,10 @@ int main(int argc, char **argv)
     // the command line. If they are specified on the command line, they must be in
     // the order: topology, input-data, and optionally, weights.
 
-    std::string topologyFilename = "topology.txt";   // Always needed
-    std::string inputDataFilename = "inputData.txt"; // Always needed
-    std::string weightsFilename = "weights.txt";     // Needed only if saving or restoring weights
+    std::string pathPrefix = "../Neural2D/";
+    std::string topologyFilename = pathPrefix + "topology.txt";   // Always needed
+    std::string inputDataFilename = pathPrefix + "inputData.txt"; // Always needed
+    std::string weightsFilename = pathPrefix + "weights.txt";     // Needed only if saving or restoring weights
 
     if (argc > 1) topologyFilename  = argv[1];
     if (argc > 2) inputDataFilename = argv[2];

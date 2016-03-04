@@ -1,4 +1,4 @@
-path_prefix = ../images/digits/
+path_prefix = ../Neural2D/images/digits/
 test-1.bmp -1 -1 -1 -1 -1 1 -1 -1 -1 -1 
 test-2.bmp -1 -1 -1 -1 1 -1 -1 -1 -1 -1 
 test-3.bmp -1 -1 -1 -1 1 -1 -1 -1 -1 -1 
