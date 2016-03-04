@@ -204,7 +204,7 @@ void WebServer::webServerThread(int portNumber, MessageQueue &messages)
     // connections in the TIME_WAIT state, thus allowing the webserver
     // to be restarted without waiting for the TIME_WAIT to expire.
 
-    int optval = 1;
+    char optval = 1; //int optval = 1;
     setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
     if (-1 == bind(socketFd, (struct sockaddr *)&stSockAddr, sizeof(stSockAddr))) {
