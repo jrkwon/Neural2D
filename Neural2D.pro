@@ -9,7 +9,7 @@ QT       += core
 QT       -= gui
 
 CONFIG += c++11
-DEFINES += WIN32
+DEFINES += WIN32 DISABLE_WEBSERVER
 
 TARGET = Neural2D
 CONFIG   += console
@@ -25,9 +25,7 @@ SOURCES += \
     neural2d.cpp \
     neural2d-core.cpp \
     parseTopologyConfig.cpp \
-    unitTest.cpp \
-    visualize.cpp \
-    webserver.cpp
+    visualize.cpp
 
 DISTFILES += \
     http-response-template.txt \
