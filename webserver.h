@@ -10,8 +10,12 @@ For more info, see neural2d.h and https://github.com/davidrmiller/neural2d
 #include <string>
 
 // For web server:
-#include <sys/socket.h>
-#include <netinet/in.h>
+#ifdef WIN32
+    #include "win32socket.h"
+#else
+    #include <sys/socket.h>
+    #include <netinet/in.h>
+#endif
 
 #include "messagequeue.h"
 

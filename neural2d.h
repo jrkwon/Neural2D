@@ -111,8 +111,12 @@ See https://github.com/davidrmiller/neural2d for more information.
 #if defined(ENABLE_WEBSERVER) && !defined(DISABLE_WEBSERVER)
     #include <condition_variable> // For mutex
     #include <thread>
+#ifdef WIN32
+    #include "win32socket.h"
+#else
     #include <sys/socket.h>  // POSIX sockets
     #include <netinet/in.h>  // POSIX sockets
+#endif
     #include "webserver.h"
 #endif
 
