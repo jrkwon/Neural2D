@@ -8,6 +8,9 @@ QT       += core
 
 QT       -= gui
 
+CONFIG += c++11
+DEFINES += WIN32
+
 TARGET = Neural2D
 CONFIG   += console
 CONFIG   -= app_bundle
@@ -15,4 +18,26 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += \
+    imageReaderBMP.cpp \
+    imageReaderDat.cpp \
+    messagequeue.cpp \
+    neural2d.cpp \
+    neural2d-core.cpp \
+    parseTopologyConfig.cpp \
+    unitTest.cpp \
+    visualize.cpp \
+    webserver.cpp
+
+DISTFILES += \
+    http-response-template.txt \
+    inputData.txt \
+    inputData-xor.txt \
+    topology.txt \
+    topology-xor.txt
+
+HEADERS += \
+    messagequeue.h \
+    neural2d.h \
+    webserver.h \
+    win32socket.h
